@@ -266,16 +266,36 @@
 
   /* ============================================================
      8. ACTIVE NAV LINK — highlight current page link
+     Uses data-nav-active on <body> + data-nav-key on each link.
+     Falls back to href match for pages where hrefs are unique.
   ============================================================ */
   function initActiveNav() {
+    const links = document.querySelectorAll(".main-nav-links .nav-link");
+
+    // Remove any stale active classes first
+    links.forEach((link) => link.classList.remove("active"));
+
+    // Primary: use data-nav-active set on <body> (e.g. category pages)
+    const activeKey = document.body.dataset.navActive;
+    if (activeKey) {
+      links.forEach((link) => {
+        if (link.dataset.navKey === activeKey) {
+          link.classList.add("active");
+        }
+      });
+      return;
+    }
+
+    // Fallback: match by href (works on pages where hrefs are unique)
     const currentPage =
       window.location.pathname.split("/").pop() || "index.html";
-    const links = document.querySelectorAll(".main-nav-links .nav-link");
     links.forEach((link) => {
       const href = link.getAttribute("href") || "";
+      // Only activate if the href is NOT a shared page like category.html
       if (
-        href === currentPage ||
-        (currentPage === "" && href === "index.html")
+        href === currentPage &&
+        href !== "category.html" &&
+        (currentPage !== "" || href === "index.html")
       ) {
         link.classList.add("active");
       }

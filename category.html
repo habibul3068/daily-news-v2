@@ -118,15 +118,15 @@
         <!-- Nav Links -->
         <div class="collapse navbar-collapse" id="mainNavMenu">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 main-nav-links">
-            <li class="nav-item"><a class="nav-link" href="category.html">জাতীয়</a></li>
-            <li class="nav-item"><a class="nav-link" href="category.html">রাজনীতি</a></li>
-            <li class="nav-item"><a class="nav-link" href="category.html">অর্থনীতি</a></li>
-            <li class="nav-item"><a class="nav-link" href="category.html">রাজধানী</a></li>
-            <li class="nav-item"><a class="nav-link" href="category.html">সারাদেশ</a></li>
-            <li class="nav-item"><a class="nav-link" href="category.html">আন্তর্জাতিক</a></li>
-            <li class="nav-item"><a class="nav-link" href="category.html">বিনোদন</a></li>
-            <li class="nav-item"><a class="nav-link" href="category.html">খেলাধুলা</a></li>
-            <li class="nav-item"><a class="nav-link" href="category.html">চাকরি</a></li>
+            <li class="nav-item"><a class="nav-link" data-nav-key="jatiya" href="category.html">জাতীয়</a></li>
+            <li class="nav-item"><a class="nav-link" data-nav-key="rajniti" href="category.html">রাজনীতি</a></li>
+            <li class="nav-item"><a class="nav-link" data-nav-key="arthaniti" href="category.html">অর্থনীতি</a></li>
+            <li class="nav-item"><a class="nav-link" data-nav-key="rajdhani" href="category.html">রাজধানী</a></li>
+            <li class="nav-item"><a class="nav-link" data-nav-key="saradesh" href="category.html">সারাদেশ</a></li>
+            <li class="nav-item"><a class="nav-link" data-nav-key="antarjatik" href="category.html">আন্তর্জাতিক</a></li>
+            <li class="nav-item"><a class="nav-link" data-nav-key="binodon" href="category.html">বিনোদন</a></li>
+            <li class="nav-item"><a class="nav-link" data-nav-key="kheladhula" href="category.html">খেলাধুলা</a></li>
+            <li class="nav-item"><a class="nav-link" data-nav-key="chakri" href="category.html">চাকরি</a></li>
           </ul>
 
           <!-- Right controls -->
@@ -645,7 +645,7 @@
           </div>
           <ul class="sidebar-cat-list">
             <li><a href="category.html" class="sidebar-cat-item"><span>জাতীয়</span><span class="sidebar-cat-count">৩৪২</span></a></li>
-            <li><a href="category.html" class="sidebar-cat-item active"><span>রাজনীতি</span><span class="sidebar-cat-count">২৪৮</span></a></li>
+            <li><a href="category.html" class="sidebar-cat-item"><span>রাজনীতি</span><span class="sidebar-cat-count">২৪৮</span></a></li>
             <li><a href="category.html" class="sidebar-cat-item"><span>অর্থনীতি</span><span class="sidebar-cat-count">১৮৫</span></a></li>
             <li><a href="category.html" class="sidebar-cat-item"><span>আন্তর্জাতিক</span><span class="sidebar-cat-count">২১৪</span></a></li>
             <li><a href="category.html" class="sidebar-cat-item"><span>খেলাধুলা</span><span class="sidebar-cat-count">১৩৭</span></a></li>
@@ -666,6 +666,123 @@
     </div><!-- /row -->
   </div>
 </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer id="site-footer" class="site-footer" aria-label="Site footer">
+
+    <!-- Footer Brand Bar -->
+    <div class="footer-brand-bar">
+      <div class="container-fluid px-3 px-lg-4">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+          <div class="d-flex align-items-center gap-3">
+            <img src="assets/img/logo_main.png" alt="Daily News BD" width="70" height="46" loading="lazy" />
+            <div>
+              <span class="footer-brand-url">daily newsbd.online</span>
+              <span class="footer-brand-sep">|</span>
+              <span class="footer-brand-tagline">দেশ ও মানুষের কল্যাণে।</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Main -->
+    <div class="footer-main">
+      <div class="container-fluid px-3 px-lg-4">
+        <div class="row g-4">
+
+          <!-- About Us -->
+          <div class="col-lg-5 col-md-12">
+            <div class="footer-about">
+              <div class="d-flex align-items-start gap-3 mb-3">
+                <img src="assets/img/logo_main.png" alt="Daily News BD" width="65" height="42" loading="lazy" />
+                <div>
+                  <h3 class="footer-section-title">ABOUT US</h3>
+                  <p class="footer-about-text">The Daily News BD Online is a promising online news portal of Bangladesh. We collect news from all over the world using actual sources. So you will find the true news here. Be with us, be with truth.</p>
+                </div>
+              </div>
+              <div class="footer-social-row">
+                <a href="https://facebook.com/dailynewsbd" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="https://twitter.com/dailynewsbd" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+                <a href="https://youtube.com/dailynewsbd" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Details -->
+          <div class="col-lg-7 col-md-12">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <h3 class="footer-section-title">CONTACT DETAILS</h3>
+                <address class="footer-address">
+                  <p><strong>Bangladesh Office:</strong> 2/2, R. K. Mission Road, Motijheel, Dhaka-1203.</p>
+                  <p><strong>Mail:</strong> dailynewsbdonline@gmail.com, dnbdmedia@gmail.com</p>
+                  <p><strong>Mobile:</strong> 01731-828236, 01919-667217, 01568-393401, 01913-719924, 01715-818695, 01714-370017</p>
+                  <p class="mt-2"><strong>USA Office:</strong> 109-17 205th St, Saint Albans, NY 11412.<br />Phone: +1 (718) 864-3245</p>
+                </address>
+              </div>
+              <div class="col-md-6">
+                <h3 class="footer-section-title">LONDON OFFICE</h3>
+                <address class="footer-address">
+                  <p>8/A Prime Meridian Walk, Canary Wharf, London.<br />Phone: +44 7597 597282</p>
+                  <h4 class="footer-section-title mt-3">UAE OFFICE</h4>
+                  <p>Riyadh – Al-Mursalat, District – King, Abdullah Road-12461.<br />Phone: +966 57 653 5102</p>
+                </address>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Editor Info Row -->
+        <div class="row g-3 mt-1 footer-editor-row">
+          <div class="col-md-4">
+            <h3 class="footer-section-title">EDITOR : MD SAIDUL ISLAM</h3>
+            <p class="footer-address">Chief Editor : SM. Miraz Hossain Tipu</p>
+          </div>
+          <div class="col-md-4">
+            <h3 class="footer-section-title">EXECUTIVE EDITOR : MD LUTFOR RAHMAN (KHAJA SHAH)</h3>
+            <p class="footer-address">Mobile : +88 01715-818695</p>
+          </div>
+          <div class="col-md-4">
+            <h3 class="footer-section-title">DEPUTY EDITOR : FATEMA AKTER RANI</h3>
+            <p class="footer-address">Mobile : +88 01712-898043</p>
+          </div>
+        </div>
+
+        <!-- Footer Category Links -->
+        <div class="footer-cat-links mt-4">
+          <h3 class="footer-section-title mb-2">বিভাগ</h3>
+          <div class="d-flex flex-wrap gap-2">
+            <a href="category.html" class="footer-cat-link">খেলাধুলা</a>
+            <a href="category.html" class="footer-cat-link">খাবার</a>
+            <a href="category.html" class="footer-cat-link">প্রধান খবর</a>
+            <a href="category.html" class="footer-cat-link">রাজনীতি</a>
+            <a href="category.html" class="footer-cat-link">অপরাধ</a>
+            <a href="category.html" class="footer-cat-link">বিজ্ঞান</a>
+            <a href="category.html" class="footer-cat-link">বাংলাদেশ</a>
+            <a href="category.html" class="footer-cat-link">বিশ্ব</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="container-fluid px-3 px-lg-4">
+        <div class="d-flex justify-content-between flex-wrap gap-2">
+          <p class="footer-copy">Designed and Developed by Daily News BD.</p>
+          <div class="footer-bottom-links">
+            <a href="index.html">Home</a>
+            <a href="#">Contact Us</a>
+            <a href="#">English</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </footer>
 
 </body>
 
