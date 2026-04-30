@@ -364,5 +364,145 @@
     }
     initCatSortBtns();
     initCatPagination();
+
+    /* ── NEWS DETAIL PAGE FEATURES ─────────────────────────────── */
+
+    /* Reading progress bar */
+    function initReadingProgress() {
+      const bar = document.getElementById("ndProgressBar");
+      const article = document.getElementById("newsArticle");
+      if (!bar || !article) return;
+
+      window.addEventListener(
+        "scroll",
+        () => {
+          const articleTop = article.offsetTop;
+          const articleHeight = article.offsetHeight;
+          const scrolled = window.scrollY - articleTop;
+          const progress = Math.min(
+            100,
+            Math.max(0, (scrolled / (articleHeight - window.innerHeight)) * 100),
+          );
+          bar.style.width = progress + "%";
+        },
+        { passive: true },
+      );
+    }
+
+    /* Copy link button */
+    function initCopyLink() {
+      const btn = document.getElementById("ndCopyLink");
+      if (!btn) return;
+
+      btn.addEventListener("click", () => {
+        navigator.clipboard
+          .writeText(window.location.href)
+          .then(() => {
+            btn.classList.add("copied");
+            const icon = btn.querySelector("i");
+            if (icon) {
+              icon.className = "bi bi-check-lg";
+              setTimeout(() => {
+                icon.className = "bi bi-link-45deg";
+                btn.classList.remove("copied");
+              }, 2000);
+            }
+          })
+          .catch(() => {
+            /* fallback for older browsers */
+            const input = document.createElement("input");
+            input.value = window.location.href;
+            document.body.appendChild(input);
+            input.select();
+            document.execCommand("copy");
+            document.body.removeChild(input);
+          });
+      });
+    }
+
+    /* Font size controls */
+    function initFontControls() {
+      const incBtn = document.getElementById("ndFontInc");
+      const decBtn = document.getElementById("ndFontDec");
+      const body = document.getElementById("ndBody");
+      if (!incBtn || !decBtn || !body) return;
+
+      let currentSize = parseFloat(getComputedStyle(body).fontSize);
+      const minSize = 13;
+      const maxSize = 22;
+
+      incBtn.addEventListener("click", () => {
+        if (currentSize < maxSize) {
+          currentSize += 1;
+          body.style.fontSize = currentSize + "px";
+        }
+      });
+
+      decBtn.addEventListener("click", () => {
+        if (currentSize > minSize) {
+          currentSize -= 1;
+          body.style.fontSize = currentSize + "px";
+        }
+      });
+    }
+
+    /* Print article */
+    function initPrintBtn() {
+      const btn = document.getElementById("ndPrint");
+      if (!btn) return;
+      btn.addEventListener("click", () => {
+        window.print();
+      });
+    }
+
+    /* Social share links */
+    function initShareLinks() {
+      const pageUrl = encodeURIComponent(window.location.href);
+      const pageTitle = encodeURIComponent(document.title);
+
+      document.querySelectorAll(".nd-share-fb").forEach((el) => {
+        if (el.tagName === "A") {
+          el.href =
+            "https://www.facebook.com/sharer/sharer.php?u=" + pageUrl;
+          el.target = "_blank";
+          el.rel = "noopener noreferrer";
+        }
+      });
+
+      document.querySelectorAll(".nd-share-tw").forEach((el) => {
+        if (el.tagName === "A") {
+          el.href =
+            "https://twitter.com/intent/tweet?url=" +
+            pageUrl +
+            "&text=" +
+            pageTitle;
+          el.target = "_blank";
+          el.rel = "noopener noreferrer";
+        }
+      });
+
+      document.querySelectorAll(".nd-share-wa").forEach((el) => {
+        if (el.tagName === "A") {
+          el.href = "https://wa.me/?text=" + pageTitle + "%20" + pageUrl;
+          el.target = "_blank";
+          el.rel = "noopener noreferrer";
+        }
+      });
+
+      document.querySelectorAll(".nd-share-li").forEach((el) => {
+        if (el.tagName === "A") {
+          el.href =
+            "https://www.linkedin.com/shareArticle?mini=true&url=" + pageUrl;
+          el.target = "_blank";
+          el.rel = "noopener noreferrer";
+        }
+      });
+    }
+
+    initReadingProgress();
+    initCopyLink();
+    initFontControls();
+    initPrintBtn();
+    initShareLinks();
   });
 })();
