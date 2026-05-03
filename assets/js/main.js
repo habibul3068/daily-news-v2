@@ -70,8 +70,9 @@
       nextBtn.style.opacity = currentIndex >= getMaxIndex() ? "0.45" : "1";
     }
 
-    // Ensure track has overflow:hidden and no flex-wrap
-    track.style.overflow = "hidden";
+    // Ensure the wrapper clips overflow, track itself must be visible for translateX
+    track.parentElement.style.overflow = "hidden";
+    track.style.overflow = "visible";
     track.style.flexWrap = "nowrap";
 
     nextBtn.addEventListener("click", () => {

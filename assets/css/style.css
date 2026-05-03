@@ -749,6 +749,7 @@ a:hover { color: var(--blue-primary); }
   display: flex;
   align-items: center;
   gap: 8px;
+  overflow: hidden;
 }
 
 .slider-arrow {
@@ -771,7 +772,7 @@ a:hover { color: var(--blue-primary); }
 .exclusive-track {
   display: flex;
   gap: 12px;
-  overflow: hidden;
+  overflow: visible;
   flex: 1;
 }
 
